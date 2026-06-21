@@ -30,6 +30,7 @@ linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
 url('https://images.unsplash.com/photo-1593691509543-c55fb32e5f7e?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
 height:100vh;
 color:white;
 }
@@ -53,14 +54,9 @@ max-width:100%;
 background:#95c24d;
 color:white;
 padding:12px 25px;
-border-radius:30px;
+border-radius:10px;
 text-decoration:none;
 font-weight:600;
-transition:.3s;
-}
-
-.nav-btn:hover{
-background:#7ea63f;
 }
 
 .hero-content{
@@ -89,16 +85,10 @@ margin-bottom:35px;
 .hero-btn{
 background:#95c24d;
 padding:16px 40px;
-border-radius:30px;
+border-radius:10px;
 color:white;
 text-decoration:none;
 font-weight:600;
-transition:.3s;
-}
-
-.hero-btn:hover{
-background:#7ea63f;
-transform:translateY(-2px);
 }
 
 /* SECTIONS */
@@ -132,10 +122,10 @@ margin-top:50px;
 
 .card{
 background:white;
-border-radius:18px;
+border-radius:15px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.4s;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
 }
 
 .card:hover{
@@ -144,7 +134,7 @@ transform:translateY(-8px);
 
 .card img{
 width:100%;
-height:230px;
+height:220px;
 object-fit:cover;
 }
 
@@ -157,7 +147,7 @@ color:#1b4332;
 padding:0 20px 25px;
 }
 
-/* TEA BANNER */
+/* BANNER */
 
 .banner{
 background:
@@ -165,7 +155,6 @@ linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
 color:white;
 }
 
@@ -199,11 +188,6 @@ padding:35px;
 border-radius:15px;
 text-align:center;
 box-shadow:0 10px 25px rgba(0,0,0,.06);
-transition:.3s;
-}
-
-.feature:hover{
-transform:translateY(-5px);
 }
 
 .feature h3{
@@ -234,10 +218,6 @@ text-decoration:none;
 font-weight:600;
 }
 
-.contact-btn:hover{
-opacity:.9;
-}
-
 /* FOOTER */
 
 footer{
@@ -247,7 +227,7 @@ text-align:center;
 padding:25px;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -270,16 +250,6 @@ z-index:999;
 /* MOBILE */
 
 @media(max-width:768px){
-
-.hero{
-height:auto;
-min-height:100vh;
-}
-
-.hero-content{
-height:auto;
-padding:120px 20px;
-}
 
 .hero-content h1{
 font-size:42px;
