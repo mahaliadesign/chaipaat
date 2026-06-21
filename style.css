@@ -1,0 +1,53 @@
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    line-height:1.6;
+}
+
+header{
+    background:url('https://images.unsplash.com/photo-1564894809611-1742fc40ed80?q=80&w=1600') center/cover;
+    color:white;
+    text-align:center;
+    padding:150px 20px;
+}
+
+header h1{
+    font-size:60px;
+    margin:0;
+}
+
+header p{
+    font-size:24px;
+}
+
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h2{
+    color:#1b4332;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    border:1px solid #ddd;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.whatsapp{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:15px 25px;
+    text-decoration:none;
+    border-radius:8px;
+}
