@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaipaat | Premium Assam Tea</title>
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           Premium E-Commerce CSS Theme
+           ========================================================================== */
+        :root {
+            --primary: #074b26;        
+            --primary-dark: #041b0d;   
+            --secondary: #d4af37;      
+            --secondary-hover: #e5c158;
+            --accent: #f4eee0;         
+            --bg-color: #faf9f6;       
+            --text-main: #1a1a1a;      
+            --text-light: #555555;     
+            --white: #ffffff;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            --shadow-sm: 0 4px 15px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+            --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.3);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary); font-weight: 700; }
+        h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1rem; }
+        h2 { font-size: 2.8rem; margin-bottom: 1.5rem; text-align: center; }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: 1rem; color: var(--text-light); }
+        
+        .gold-text { color: var(--secondary); font-style: italic; font-weight: 600; }
+        
+        /* Layout Utilities */
+        .container { width: 90%; max-width: 1250px; margin: 0 auto; }
+        .section-pad { padding: 6rem 0; }
+        
+        /* Premium Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 14px 35px; font-family: var(--font-body); font-size: 0.9rem;
+            font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
+            cursor: pointer; border: 2px solid transparent; transition: var(--transition);
+            text-decoration: none; border-radius: 4px; gap: 10px;
+        }
+        .btn-gold { background-color: var(--secondary); color: var(--primary-dark); box-shadow: var(--shadow-gold); }
+        .btn-gold:hover { background-color: var(--secondary-hover); transform: translateY(-3px); }
+        .btn-outline { background-color: transparent; border-color: var(--secondary); color: var(--secondary); }
+        .btn-outline:hover { background-color: var(--secondary); color: var(--primary-dark); }
+        .btn-dark { background-color: var(--primary); color: var(--white); }
+        .btn-dark:hover { background-color: var(--primary-dark); }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px);
+            z-index: 1000; box-shadow: var(--shadow-sm); padding: 12px 0;
+            transition: var(--transition);
+        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 65px; cursor: pointer; transition: var(--transition); }
+        
+        .nav-center ul { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-center a {
+            font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--primary); text-decoration: none; position: relative; cursor: pointer;
+        }
+        .nav-center a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -5px; left: 0; background-color: var(--secondary); transition: var(--transition);
+        }
+        .nav-center a:hover::after, .nav-center a.active::after { width: 100%; }
+
+        .nav-right { display: flex; align-items: center; gap: 1.2rem; }
+        
+        .social-icons { display: flex; gap: 12px; align-items: center; }
+        .social-icons a { 
+            display: inline-flex; align-items: center; justify-content: center; 
+            width: 36px; height: 36px; border-radius: 50%;
+            transition: transform 0.3s; color: white;
+        }
+        .social-icons a:hover { transform: scale(1.1); }
+        .icon-bg-fb { background-color: #1877F2; }
+        
+        .icon-bg-ig { 
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
+        }
+
+        .cart-toggle {
+            position: relative; cursor: pointer; background: #1a1a2e;
+            color: white; padding: 8px 20px; border-radius: 30px; display: flex; align-items: center; gap: 8px;
+            transition: var(--transition); font-family: var(--font-body); font-weight: 600; font-size: 1rem;
+        }
+        .cart-toggle:hover { background: #2c2c4e; transform: scale(1.05); }
+        .cart-toggle svg { width: 20px; height: 20px; stroke: white; }
+        .cart-badge {
+            position: absolute; top: -8px; right: -8px; background: #ff3366;
+            color: white; font-size: 0.75rem; font-weight: bold; height: 22px; width: 22px;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+        }
+        
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 2rem; color: var(--primary); cursor: pointer; }
+
+        .page-section { display: none; animation: fadeUp 0.6s ease-out; }
+        .page-section.active { display: block; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex; 
+            align-items: center; 
+            margin-top: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(4,27,13,0.85) 0%, rgba(4,27,13,0.5) 50%, rgba(0,0,0,0.1) 100%);
+            z-index: 2;
+        }
+
+        .hero .container {
+            z-index: 3;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 650px; text-align: left;
+            padding-top: 80px; 
+        }
+        .hero h1 { color: var(--white); text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero h1 span { color: var(--secondary); }
+        .hero p { color: #f0f0f0; font-size: 1.3rem; margin-bottom: 2.5rem; font-weight: 300; }
+        .hero-btns { display: flex; gap: 1rem; }
+
+        /* Founders Bite Section */
+        .founders-bite-grid { 
+            display: flex; flex-direction: column; gap: 2.5rem; 
+            background: var(--white); padding: 4rem; border-radius: 12px; box-shadow: var(--shadow-sm); margin-top: 4rem;
+        }
+        .founders-content { max-width: 800px; margin: 0 auto; width: 100%; }
+        .founders-img-wrap { text-align: center; }
+        .founders-img-wrap img { width: 100%; max-width: 380px; border-radius: 8px; object-fit: contain; box-shadow: var(--shadow-md); margin-bottom: 1.5rem;}
+        .founder-name { font-size: 0.95rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px;}
+        .founders-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-light); }
+        .founders-content p:last-child { margin-bottom: 0; }
+
+        /* Why Choose Chaipaat Section */
+        .why-choose-section { padding: 5rem 0 1rem; text-align: center; }
+        .why-choose-eyebrow { 
+            font-family: var(--font-heading); font-style: italic; font-size: 1.3rem; 
+            color: var(--secondary); margin-bottom: 1rem; 
+        }
+        .why-choose-intro { max-width: 700px; margin: 0 auto 3.5rem; font-size: 1.05rem; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; text-align: center; }
+        .why-card {
+            background: var(--white); padding: 2.2rem 1.8rem; border-radius: 10px;
+            box-shadow: var(--shadow-sm); transition: var(--transition); border-top: 3px solid var(--secondary);
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .why-card .why-icon { font-size: 2rem; margin-bottom: 1rem; display: block; text-align: center; }
+        .why-card h4 { font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--primary); text-align: center; }
+        .why-card p { font-size: 0.92rem; margin-bottom: 0; text-align: center; }
+
+        /* Diet Consultation Section */
+        .diet-section { 
+            background: linear-gradient(135deg, #fbf1d8 0%, #f3dfa3 100%); 
+            color: var(--text-main); padding: 2.8rem; 
+            border-radius: 12px; margin-top: 3rem; box-shadow: var(--shadow-md);
+            border: 1px solid rgba(212,175,55,0.35);
+        }
+        .diet-section-grid { display: grid; grid-template-columns: 0.85fr 1fr; gap: 2.2rem; align-items: stretch; }
+        .diet-visual { position: relative; border-radius: 10px; overflow: hidden; min-height: 300px; }
+        .diet-visual img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+        .diet-quote-card {
+            position: absolute; bottom: 16px; left: 16px; background: rgba(4,27,13,0.85);
+            border: 1px solid var(--secondary); border-radius: 6px; padding: 1rem 1.2rem; max-width: 220px;
+        }
+        .diet-quote-card p { color: var(--accent); font-family: var(--font-heading); font-style: italic; font-size: 1rem; margin-bottom: 0; line-height: 1.4; }
+        .diet-form-card { background: var(--white); border-radius: 10px; padding: 1.8rem 2rem; color: var(--text-main); }
+        .diet-form-card h3 { text-align: center; margin-bottom: 0.4rem; font-size: 1.5rem; }
+        .diet-form-card > p { color: var(--text-light); text-align: center; margin-bottom: 1.3rem; font-size: 0.88rem; }
+        .diet-form { display: flex; flex-direction: column; gap: 0.95rem; text-align: left; }
+        .diet-form-group { display: flex; flex-direction: column; gap: 6px; }
+        .diet-form-group label { font-size: 0.82rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .diet-form input, .diet-form select { 
+            padding: 11px; border: 1px solid #ddd; border-radius: 4px; 
+            background: var(--bg-color); color: var(--text-main); font-family: var(--font-body); font-size: 0.92rem;
+        }
+        .diet-pref-toggle { display: flex; gap: 10px; }
+        .diet-pref-btn {
+            flex: 1; padding: 9px; border: 1px solid var(--primary); border-radius: 30px; background: transparent;
+            color: var(--primary); font-family: var(--font-body); font-weight: 600; font-size: 0.82rem; cursor: pointer;
+            transition: var(--transition);
+        }
+        .diet-pref-btn.selected, .diet-pref-btn:hover { background: var(--primary); color: var(--white); }
+        .diet-tagline { text-align: center; color: var(--text-light); font-size: 0.82rem; margin-top: 1rem; margin-bottom: 0; }
+        .diet-features-row { 
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; margin-top: 2.2rem; 
+            padding-top: 1.8rem; border-top: 1px solid rgba(4,27,13,0.12); text-align: center;
+        }
+        .diet-feature-item .diet-feature-icon {
+            width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--primary);
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 0.6rem; font-size: 1.2rem;
+            background: rgba(255,255,255,0.4);
+        }
+        .diet-feature-item h5 { font-family: var(--font-heading); color: var(--primary); font-size: 0.88rem; margin-bottom: 0.3rem; }
+        .diet-feature-item p { color: var(--text-light); font-size: 0.75rem; margin-bottom: 0; }
+
+        .story-grid { display: flex; flex-direction: column; gap: 2.5rem; }
+        .story-img img { 
+            width: 100%; 
+            aspect-ratio: 1 / 1; 
+            max-width: 450px;
+            margin: 0 auto;
+            display: block;
+            object-fit: cover; 
+            border-radius: 12px; 
+            box-shadow: var(--shadow-lg); 
+        }
+        .story-text { max-width: 800px; margin: 0 auto; width: 100%; }
+
+        .hamper-cta-wrap { text-align: center; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(0,0,0,0.08); }
+        .hamper-cta-wrap p { margin-bottom: 1.5rem; }
+        .story-extra-img { margin-top: 3rem; }
+        .story-extra-img img { width: 100%; aspect-ratio: 1.88 / 1; object-fit: cover; border-radius: 12px; box-shadow: var(--shadow-lg); }
+
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 3rem; }
+        .product-card {
+            background: var(--white); border-radius: 8px; text-align: center;
+            transition: var(--transition); border: 1px solid rgba(0,0,0,0.04);
+            overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; position: relative;
+        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+        .product-img-wrap { position: relative; overflow: hidden; cursor: pointer; background: #fff;}
+        
+        /* Bestseller Badge */
+        .bestseller-badge {
+            position: absolute; top: 15px; left: 15px; background: var(--secondary);
+            color: var(--primary-dark); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1.5px; padding: 6px 12px; border-radius: 4px; box-shadow: var(--shadow-sm); z-index: 10;
+        }
+
+        .product-img { width: 100%; height: 280px; object-fit: cover; transition: transform 0.5s; padding: 1rem;}
+        .product-card:hover .product-img { transform: scale(1.08); }
+        
+        .product-info { padding: 2rem 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-category { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); font-weight: 700; margin-bottom: 0.5rem; }
+        .product-title { font-size: 1.25rem; margin-bottom: 0.5rem; height: 60px; display: flex; align-items: center; justify-content: center; }
+        .product-price { font-size: 1.4rem; color: var(--primary); font-weight: 600; font-family: var(--font-body); margin-bottom: 1.5rem; }
+        
+        .card-actions { display: flex; gap: 10px; }
+        .btn-cart { flex: 1; padding: 12px; background: var(--primary); color: white; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: var(--transition); border-radius: 4px; font-size: 0.8rem;}
+        .btn-cart:hover { background: var(--secondary); color: var(--primary-dark); }
+        .btn-enquire { flex: 1; padding: 12px; background: transparent; color: var(--primary); border: 1px solid var(--primary); font-weight: bold; text-transform: uppercase; cursor: pointer; transition: var(--transition); border-radius: 4px; font-size: 0.8rem;}
+        .btn-enquire:hover { background: var(--primary); color: white; }
+
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 2000; display: none; opacity: 0; transition: opacity 0.3s;
+            backdrop-filter: blur(4px);
+        }
+        .overlay.active { display: block; opacity: 1; }
+
+        /* Modified Cart Drawer */
+        .cart-drawer {
+            position: fixed; top: 0; right: -450px; width: 450px; max-width: 100%; height: 100vh;
+            background: var(--bg-color); z-index: 2100; transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex; flex-direction: column; box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+        }
+        .cart-drawer.open { right: 0; }
+        .cart-header { padding: 1.5rem; background: var(--white); border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .close-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
+        
+        .cart-body { padding: 1.5rem; overflow-y: auto; flex-grow: 1; }
+        
+        .cart-item { display: flex; gap: 15px; margin-bottom: 1.5rem; background: var(--white); padding: 10px; border-radius: 8px; box-shadow: var(--shadow-sm);}
+        .cart-item img { width: 70px; height: 70px; object-fit: cover; border-radius: 4px; }
+        .cart-item-details { flex-grow: 1; }
+        .cart-item-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 5px; color: var(--primary); }
+        .cart-qty-ctrl { display: flex; align-items: center; gap: 10px; margin-top: 5px; }
+        .qty-btn { background: var(--accent); border: none; width: 25px; height: 25px; border-radius: 4px; cursor: pointer; font-weight: bold;}
+        
+        .checkout-form { margin-top: 1rem; border-top: 2px dashed #ddd; padding-top: 1.5rem; padding-bottom: 1rem;}
+        .checkout-form input, .checkout-form textarea {
+            width: 100%; padding: 12px; margin-bottom: 1rem; border: 1px solid #ccc;
+            border-radius: 4px; font-family: var(--font-body);
+        }
+        
+        .cart-footer { padding: 1.5rem; background: var(--white); border-top: 1px solid #eee; }
+        .cart-total-row { display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; font-family: var(--font-body); color: var(--primary); }
+        
+        .modal {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.95);
+            background: var(--white); width: 90%; max-width: 800px; z-index: 2200;
+            border-radius: 12px; box-shadow: var(--shadow-lg); display: none; opacity: 0;
+            transition: opacity 0.3s, transform 0.3s; overflow: hidden;
+            max-height: 90vh; flex-direction: column;
+        }
+        .modal.active { display: flex; opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        
+        .modal-close { 
+            position: absolute; top: 10px; right: 10px;
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.7rem; line-height: 1; padding: 0;
+            cursor: pointer; border: none; background: rgba(255,255,255,0.94); color: #444;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            z-index: 3000; transition: var(--transition);
+        }
+        .modal-close:hover { color: #d9534f; transform: scale(1.1); }
+        
+        .modal-grid { 
+            display: grid; grid-template-columns: 1fr 1fr; 
+            width: 100%; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch;
+        }
+        .modal-img-container { background: #f9f9f9; padding: 2rem; display: flex; align-items: center; justify-content: center; }
+        .modal-img-container img { max-width: 100%; max-height: 400px; object-fit: contain; }
+        .modal-details { padding: 2.5rem; position: relative; display: flex; flex-direction: column; }
+
+        .detail-title { font-size: 1.8rem; margin: 10px 0; line-height: 1.25; }
+        .detail-desc { font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+        .detail-meta {
+            font-size: 0.85rem; color: var(--text-light); margin-bottom: 20px; padding: 15px;
+            background: var(--bg-color); border-left: 3px solid var(--secondary); border-radius: 0 6px 6px 0;
+        }
+        .qty-input { width: 72px; padding: 12px 8px; border: 1px solid #ccc; text-align: center; border-radius: 4px; font-family: var(--font-body); font-size: 1rem; }
+
+        /* Quantity + Add to Cart row inside the product modal */
+        .action-flex { display: flex; gap: 10px; align-items: stretch; margin-top: auto; }
+        .action-flex .btn { flex: 1; padding: 14px 18px; white-space: nowrap; }
+        
+        .payment-modal { max-width: 400px; text-align: center; flex-direction: column; padding: 0; max-height: 90vh; overflow: hidden; }
+        .payment-body { padding: 2.2rem 1.5rem 1.5rem; overflow-y: auto; min-height: 0; -webkit-overflow-scrolling: touch; }
+        .qr-container { background: #f8f8f8; padding: 1rem; border-radius: 8px; display: inline-block; margin: 1rem 0; border: 2px dashed var(--secondary); }
+        .qr-container img { width: 180px; height: 180px; object-fit: contain;}
+        .order-ref { font-size: 1rem; color: var(--primary); font-weight: bold; margin-bottom: 5px; }
+        
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .review-card {
+            background: var(--white); padding: 2.5rem 2rem; border-radius: 8px;
+            box-shadow: var(--shadow-sm); text-align: center; transition: var(--transition);
+            border-bottom: 4px solid var(--secondary);
+        }
+        .review-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .stars { color: #f39c12; margin-bottom: 1rem; font-size: 1.2rem; }
+        .review-text { font-style: italic; color: var(--text-light); margin-bottom: 1.5rem; }
+        .reviewer-name { font-weight: 700; color: var(--primary); font-family: var(--font-heading); }
+
+        .contact-cards-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .contact-feature {
+            background: var(--white); padding: 2.5rem; text-align: center;
+            border-radius: 12px; box-shadow: var(--shadow-md); transition: var(--transition);
+            border-bottom: 3px solid var(--secondary);
+        }
+        .contact-feature:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .contact-feature svg { margin-bottom: 1rem; color: var(--secondary); }
+        .contact-feature h4 { font-family: var(--font-body); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+
+        footer { background: var(--primary-dark); color: #e0e0e0; padding: 5rem 0 2rem; font-size: 0.95rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 4rem; margin-bottom: 4rem; }
+        .footer-col h4 { color: var(--secondary); margin-bottom: 1.8rem; font-family: var(--font-heading); letter-spacing: 1px; font-size: 1.3rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 1rem; }
+        .footer-col ul li a { color: #b0b0b0; transition: var(--transition); cursor: pointer; text-decoration: none;}
+        .footer-col ul li a:hover { color: var(--secondary); padding-left: 8px; }
+        .footer-socials { display: flex; gap: 15px; margin-top: 1.5rem; }
+        
+        .footer-logo-wrapper { background: var(--white); padding: 10px; border-radius: 8px; display: inline-block; margin-bottom: 1rem;}
+        
+        .quote-form input, .quote-form textarea {
+            width: 100%; padding: 10px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 4px; font-family: var(--font-body);
+        }
+        .quote-form input::placeholder, .quote-form textarea::placeholder { color: #888; }
+        
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .dev-credit { color: var(--secondary); cursor: pointer; font-size: 0.85rem; transition: var(--transition); }
+        .dev-credit:hover { color: var(--white); }
+
+        @media (max-width: 900px) {
+            h1 { font-size: 2.8rem; }
+            .mobile-menu-btn { display: block; }
+            .nav-center {
+                position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
+                background: var(--white); box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: 0.4s; flex-direction: column; padding-top: 80px;
+                z-index: 1050;
+            }
+            .nav-center.open { right: 0; }
+            .nav-center ul { flex-direction: column; align-items: center; gap: 2rem; }
+            .mobile-close-nav {
+                position: absolute; top: 20px; right: 20px; font-size: 2rem; 
+                background: none; border: none; cursor: pointer; color: var(--text-main);
+                display: block !important;
+            }
+
+            .hero-content { text-align: center; margin: 0 auto; }
+            .hero-btns { justify-content: center; flex-wrap: wrap; }
+
+            /* ---------- PRODUCT / HAMPER MODAL (mobile) ---------- */
+            .modal {
+                width: calc(100% - 24px);
+                max-width: 520px;
+                max-height: 88vh;
+                border-radius: 14px;
+            }
+            .modal-grid { grid-template-columns: 1fr; }
+            .modal-img-container { padding: 1rem; }
+            .modal-img-container img { max-height: 30vh; }
+            .modal-details { padding: 1.2rem 1.1rem 1.1rem; }
+            .detail-title { font-size: 1.4rem; margin: 6px 0; }
+            .modal-details .product-price { font-size: 1.25rem; margin-bottom: 0.9rem; }
+            .detail-desc { font-size: 0.9rem; line-height: 1.55; margin-bottom: 14px; }
+            .detail-meta { font-size: 0.8rem; padding: 12px; margin-bottom: 14px; }
+            /* Keep qty + Add to Cart pinned and always readable while the text scrolls */
+            .modal-details .action-flex {
+                position: sticky; bottom: 0; background: var(--white);
+                padding: 10px 0 2px; margin-top: 4px;
+            }
+            .action-flex .btn { padding: 14px 10px; font-size: 0.82rem; letter-spacing: 1px; }
+            .qty-input { width: 64px; padding: 12px 4px; }
+
+            .story-grid { gap: 1.8rem; }
+            .founders-bite-grid { padding: 2rem; gap: 1.8rem; }
+            .diet-section { padding: 1.8rem 1.3rem; margin-top: 2rem; }
+            .diet-section-grid { grid-template-columns: 1fr; }
+            .diet-visual { min-height: 220px; }
+            .diet-features-row { grid-template-columns: repeat(2, 1fr); }
+            .why-choose-section { padding: 3rem 0 1rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .social-icons { display: none; } 
+        }
+        @media (min-width: 901px) {
+            .mobile-close-nav { display: none; }
+        }
+
+        /* ===================== PHONE (<=600px) ===================== */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.1rem; line-height: 1.2; }
+            h2 { font-size: 1.75rem; margin-bottom: 1.1rem; }
+            h3 { font-size: 1.25rem; }
+            p { font-size: 0.95rem; }
+
+            .container { width: 92%; }
+            .section-pad { padding: 3rem 0; }
+
+            header { padding: 8px 0; }
+            .logo img { height: 46px; }
+            .nav-right { gap: 0.6rem; }
+            .cart-toggle { padding: 7px 14px; font-size: 0.85rem; }
+            .cart-toggle svg { width: 17px; height: 17px; }
+            .cart-badge { height: 19px; width: 19px; font-size: 0.68rem; top: -6px; right: -6px; }
+            .mobile-menu-btn { font-size: 1.6rem; padding: 0; }
+
+            .hero { height: auto; min-height: 88vh; padding: 5.5rem 0 3rem; }
+            .hero p { font-size: 1rem; margin-bottom: 1.8rem; }
+            .hero-btns { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+            .hero-btns .btn { width: 100%; }
+            .btn { padding: 13px 22px; font-size: 0.8rem; letter-spacing: 1px; }
+
+            /* Product grid: two compact cards per row so buttons stay tappable */
+            .grid-container { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .product-img { height: 150px; padding: 0.5rem; }
+            .product-info { padding: 0.9rem 0.7rem; }
+            .product-category { font-size: 0.6rem; letter-spacing: 1px; margin-bottom: 0.25rem; }
+            .product-title { font-size: 0.92rem; height: auto; min-height: 42px; margin-bottom: 0.35rem; line-height: 1.3; }
+            .product-price { font-size: 1.05rem; margin-bottom: 0.8rem; }
+            .card-actions { flex-direction: column; gap: 7px; }
+            .btn-cart, .btn-enquire { padding: 11px 6px; font-size: 0.7rem; letter-spacing: 0.5px; }
+            .bestseller-badge { top: 8px; left: 8px; font-size: 0.58rem; padding: 4px 7px; letter-spacing: 1px; }
+            .product-card:hover { transform: none; }
+
+            /* Modal fine-tuning on small phones */
+            .modal { width: calc(100% - 20px); max-height: 86vh; }
+            .modal-close { width: 38px; height: 38px; top: 8px; right: 8px; font-size: 1.6rem; }
+            .modal-img-container { padding: 0.9rem; }
+            .modal-img-container img { max-height: 24vh; }
+            .payment-body { padding: 2rem 1.1rem 1.2rem; }
+            .qr-container { padding: 0.7rem; margin: 0.8rem 0; }
+            .qr-container img { width: 150px; height: 150px; }
+            .payment-body .upi-id { font-size: 1rem; word-break: break-all; }
+            .payment-body .btn { font-size: 0.75rem; letter-spacing: 0.5px; padding: 13px 8px; }
+
+            /* Cart drawer */
+            .cart-drawer { width: 100%; right: -100%; }
+            .cart-header, .cart-body, .cart-footer { padding: 1rem; }
+            .cart-item img { width: 58px; height: 58px; }
+            .cart-item-title { font-size: 0.88rem; }
+
+            /* Content sections */
+            .why-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .why-card { padding: 1.5rem 1.2rem; }
+            .why-choose-intro { margin-bottom: 2rem; font-size: 0.95rem; }
+            .founders-bite-grid { padding: 1.4rem; gap: 1.4rem; margin-top: 2.5rem; }
+            .founders-content p { font-size: 0.95rem; }
+            .diet-form-card { padding: 1.2rem 1rem; }
+            .diet-features-row { grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.6rem; padding-top: 1.4rem; }
+            .reviews-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+            .review-card { padding: 1.7rem 1.2rem; }
+            .contact-cards-wrap { grid-template-columns: 1fr; gap: 1.2rem; }
+            .contact-feature { padding: 1.7rem 1.2rem; }
+            .hamper-cta-wrap { margin-top: 2.5rem; padding-top: 2rem; }
+            .story-extra-img { margin-top: 2rem; }
+
+            footer { padding: 3rem 0 1.5rem; }
+            .footer-grid { gap: 2.2rem; margin-bottom: 2.2rem; }
+            .footer-col h4 { margin-bottom: 1rem; font-size: 1.15rem; }
+            .footer-col ul li { margin-bottom: 0.6rem; }
+        }
+
+        /* ===================== SMALL PHONE (<=380px) ===================== */
+        @media (max-width: 380px) {
+            h1 { font-size: 1.85rem; }
+            .grid-container { grid-template-columns: 1fr; }
+            .product-img { height: 200px; }
+            .card-actions { flex-direction: row; }
+            .product-title { min-height: 0; font-size: 1rem; }
+            .logo img { height: 42px; }
+            .cart-toggle { padding: 6px 11px; font-size: 0.78rem; }
+        }
+
+        /* Use dynamic viewport height where supported so mobile browser toolbars
+           never clip the modal's close button or its Add to Cart button */
+        @supports (height: 100dvh) {
+            .modal { max-height: 90dvh; }
+            @media (max-width: 900px) { .modal { max-height: 88dvh; } }
+            @media (max-width: 600px) { .modal { max-height: 86dvh; } }
+        }
+
+        /* Prevent the page behind a modal/drawer from scrolling on touch devices */
+        body.no-scroll { overflow: hidden; }
+    </style>
+</head>
+<body>
+
+    <!-- Standard Inline SVGs -->
+    <svg style="display:none;">
+        <symbol id="icon-fb" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V15.33H7.898v-3.33h2.54V9.455c0-2.502 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 3.33h-2.33v6.549C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"/>
+        </symbol>
+        <symbol id="icon-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </symbol>
+        <symbol id="icon-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24" fill="#f39c12">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </symbol>
+        <symbol id="icon-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </symbol>
+    </svg>
+
+    <header>
+        <div class="container nav-wrapper">
+            <button class="mobile-menu-btn" onclick="toggleMobileNav()">
+                <svg width="28" height="28"><use href="#icon-menu"></use></svg>
+            </button>
+
+            <div class="logo" onclick="navigateTo('home')">
+                <img src="assets/Chaipaat Logo PNG-19.jpg" alt="Chaipaat">
+            </div>
+            
+            <nav class="nav-center" id="mobile-nav">
+                <button class="mobile-close-nav" onclick="toggleMobileNav()">×</button>
+                <ul>
+                    <li><a onclick="navigateTo('home')" class="nav-item active" data-target="home">Home</a></li>
+                    <li><a onclick="navigateTo('about')" class="nav-item" data-target="about">Story</a></li>
+                    <li><a onclick="navigateTo('shop')" class="nav-item" data-target="shop">Shop Teas</a></li>
+                    <li><a onclick="navigateTo('hampers')" class="nav-item" data-target="hampers">Tea Hampers</a></li>
+                    <li><a onclick="navigateTo('reviews')" class="nav-item" data-target="reviews">Reviews</a></li>
+                    <li><a onclick="navigateTo('contact')" class="nav-item" data-target="contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-right">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61562082190170&sk=directory_contact_info" target="_blank" class="icon-bg-fb">
+                        <svg width="18" height="18"><use href="#icon-fb"></use></svg>
+                    </a>
+                    <a href="https://www.instagram.com/chaipaat_official/" target="_blank" class="icon-bg-ig">
+                        <svg width="18" height="18"><use href="#icon-ig"></use></svg>
+                    </a>
+                </div>
+                <div class="cart-toggle" onclick="toggleCart()">
+                    <svg><use href="#icon-cart"></use></svg> Cart
+                    <span class="cart-badge" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="app">
+        <!-- ================= HOME PAGE ================= -->
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="assets/herovideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Discover the <span>True Essence</span> of Assam</h1>
+                        <p>Experience the world’s finest tea, grown in Assam’s lush gardens, handpicked with care, and crafted to deliver an exceptional taste in every cup.</p>
+                        <div class="hero-btns">
+                            <a onclick="navigateTo('shop')" class="btn btn-gold">Shop Garden Fresh Assam Tea</a>
+                            <a onclick="navigateTo('hampers')" class="btn btn-outline" style="color: white; border-color: white;">View Hampers</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- Why Choose Chaipaat Section -->
+                <div class="why-choose-section">
+                    <h2>Why Choose <span class="gold-text">Chaipaat?</span></h2>
+                    <div class="why-choose-eyebrow">A Taste of Assam. A Tea You Can Trust.</div>
+                    <p class="why-choose-intro">At Chaipaat, we bring the authentic essence of Assam's tea gardens straight to your cup — with freshness, care and a commitment to quality.</p>
+                    <div class="why-grid">
+                        <div class="why-card">
+                            <span class="why-icon">🌿</span>
+                            <h4>Authentic Assam Tea</h4>
+                            <p>Sourced from the lush and renowned tea gardens of Assam, bringing you the true character of Assam tea.</p>
+                        </div>
+                        <div class="why-card">
+                            <span class="why-icon">🍵</span>
+                            <h4>From Garden to Your Cup</h4>
+                            <p>From carefully selected leaves to thoughtful packaging, we focus on preserving the journey, freshness and flavour of every cup.</p>
+                        </div>
+                        <div class="why-card">
+                            <span class="why-icon">🤲</span>
+                            <h4>Handpicked with Care</h4>
+                            <p>Every selection is made with attention to quality, ensuring that only the right leaves make their way into your cup.</p>
+                        </div>
+                        <div class="why-card">
+                            <span class="why-icon">☕</span>
+                            <h4>The Rich Taste of Assam</h4>
+                            <p>Bold aroma, distinctive character and a beautifully satisfying taste — the essence of Assam in every sip.</p>
+                        </div>
+                        <div class="why-card">
+                            <span class="why-icon">✨</span>
+                            <h4>Pure &amp; Authentic</h4>
+                            <p>We believe exceptional tea begins with genuine ingredients, careful sourcing and honest craftsmanship.</p>
+                        </div>
+                        <div class="why-card">
+                            <span class="why-icon">📦</span>
+                            <h4>Freshness Sealed In</h4>
+                            <p>Thoughtfully packed to help preserve the tea's natural aroma, freshness and flavour until it reaches you.</p>
+                        </div>
+                        <div class="why-card">
+                            <span class="why-icon">💚</span>
+                            <h4>Tea Made with Wellness in Mind</h4>
+                            <p>Thoughtfully developed tea options to complement different lifestyles, wellness goals and everyday health-conscious choices.</p>
+                        </div>
+                        <div class="why-card">
+                            <span class="why-icon">📝</span>
+                            <h4>Customised to Your Needs</h4>
+                            <p>Because every tea lover is unique, we believe tea should be personal. We offer thoughtful customisation based on your preferences, needs and care.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container section-pad">
+                <h2>Our <span class="gold-text">Signature</span> Blends</h2>
+                <div class="grid-container" id="featured-products"></div>
+                <div style="text-align: center; margin-top: 4rem;">
+                    <a onclick="navigateTo('shop')" class="btn btn-outline">Explore Full Collection</a>
+                </div>
+
+                <!-- Free Diet Consultation Section -->
+                <div class="diet-section">
+                    <div class="diet-section-grid">
+                        <div class="diet-visual">
+                            <img src="assets/Dietician.jpg" alt="Chaipaat diet consultation">
+                            <div class="diet-quote-card">
+                                <p>Good Food<br>Better Mood<br>Healthier You</p>
+                            </div>
+                        </div>
+
+                        <div class="diet-form-card">
+                            <h3>Share a Little About Yourself</h3>
+                            <p>Help us understand your needs better. This will help our dietitian create a plan that's just right for you.</p>
+
+                            <form class="diet-form" id="diet-form" onsubmit="event.preventDefault(); submitDietConsultation();">
+                                <div class="diet-form-group">
+                                    <label for="diet-name">Name *</label>
+                                    <input type="text" id="diet-name" placeholder="Enter your name" required>
+                                </div>
+
+                                <div class="diet-form-group">
+                                    <label for="diet-age">Age *</label>
+                                    <select id="diet-age" required>
+                                        <option value="" disabled selected>Select your age range</option>
+                                        <option value="21 to 30">21 to 30</option>
+                                        <option value="31 to 50">31 to 50</option>
+                                        <option value="51 to 60">51 to 60</option>
+                                        <option value="61 to above">61 to above</option>
+                                    </select>
+                                </div>
+
+                                <div class="diet-form-group">
+                                    <label for="diet-gender">Gender *</label>
+                                    <select id="diet-gender" required>
+                                        <option value="" disabled selected>Select gender</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="diet-form-group">
+                                    <label for="diet-weight">Body Weight *</label>
+                                    <input type="text" id="diet-weight" placeholder="Enter your weight (kg)" required>
+                                </div>
+
+                                <div class="diet-form-group">
+                                    <label for="diet-height">Height *</label>
+                                    <input type="text" id="diet-height" placeholder="Enter your height (cm)" required>
+                                </div>
+
+                                <div class="diet-form-group">
+                                    <label>Diet Preference *</label>
+                                    <div class="diet-pref-toggle" id="diet-pref-toggle">
+                                        <button type="button" class="diet-pref-btn" data-pref="Veg" onclick="selectDietPref('Veg')">Veg</button>
+                                        <button type="button" class="diet-pref-btn" data-pref="Non-Veg" onclick="selectDietPref('Non-Veg')">Non-Veg</button>
+                                        <button type="button" class="diet-pref-btn" data-pref="Egg" onclick="selectDietPref('Egg')">Egg</button>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-gold" style="width: 100%;">Get Free Consultation &rarr;</button>
+                                <p class="diet-tagline">— Your health. Our priority. —</p>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="diet-features-row">
+                        <div class="diet-feature-item">
+                            <div class="diet-feature-icon">🌱</div>
+                            <h5>Personalised Diet Plan</h5>
+                            <p>Tailored to your needs and lifestyle</p>
+                        </div>
+                        <div class="diet-feature-item">
+                            <div class="diet-feature-icon">💓</div>
+                            <h5>Expert Guidance</h5>
+                            <p>From qualified dietitian</p>
+                        </div>
+                        <div class="diet-feature-item">
+                            <div class="diet-feature-icon">🧘</div>
+                            <h5>Better Health</h5>
+                            <p>More energy, clearer mind</p>
+                        </div>
+                        <div class="diet-feature-item">
+                            <div class="diet-feature-icon">🍵</div>
+                            <h5>Tea &amp; Nutrition</h5>
+                            <p>Small changes, big results</p>
+                        </div>
+                        <div class="diet-feature-item">
+                            <div class="diet-feature-icon">🌿</div>
+                            <h5>A Healthier You</h5>
+                            <p>Because you deserve it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT PAGE ================= -->
+        <section id="about" class="page-section" style="padding-top: 100px;">
+            <div class="container section-pad">
+                <h2>Our <span class="gold-text">Story</span></h2>
+                <div class="story-grid">
+                    <div class="story-img">
+                        <img src="assets/Tea_Cup.jpg" alt="Chaipaat Tea Cup in Garden">
+                    </div>
+                    <div class="story-text">
+                        <h3 style="margin-bottom: 1.5rem;">Born in Assam. Crafted with Care. Shared with the World</h3>
+                        <p>Chaipaat was born with a simple yet meaningful vision — to serve the world the real taste of Assam tea.</p>
+                        <p>For us, tea is more than a beverage. It is an emotion, a tradition, and a symbol of purity that brings people together. Assam, with its lush green tea gardens and generations of tea-growing heritage, is renowned worldwide for its bold, rich and distinctive tea. Its deep colour, strong character and captivating aroma make Assam tea truly special.</p>
+                        <p>Chaipaat represents that spirit of Assam.</p>
+                        <p>Our customers are at the heart of everything we do. The trust they place in us is reflected in the fact that 99% of our customers come back to us again — a relationship we value far beyond a simple purchase.</p>
+                        <p>Our customers can communicate directly with us, share their preferences, ask questions and consult with our team. We listen, understand and continuously learn from the people who enjoy our tea.</p>
+                        <p>Chaipaat brings together two thoughtfully created experiences — Authentic Tea, for those who cherish the traditional taste of Assam, and Customised Tea, thoughtfully developed for people who want to make tea a part of their health-conscious lifestyle.</p>
+                        <p>At Chaipaat, we are committed to bringing together taste, authenticity, wellness and care — while staying rooted in the land that inspires us.</p>
+                    </div>
+                </div>
+                <div class="story-extra-img">
+                    <img src="assets/Tea_Garden_Assam.jpg" alt="Assam Tea Garden">
+                </div>
+
+                <!-- Founders Bite Section -->
+                <div class="founders-bite-grid" style="margin-top: 4rem;">
+                    <div class="founders-content">
+                        <h2 style="text-align: left; margin-bottom: 1.5rem;">Founders <span class="gold-text">Bite</span></h2>
+                        <p>“Growing up surrounded by the lush tea estates of Assam, tea was never just a morning ritual—it was a part of our life. The earthy aroma of freshly plucked leaves and the misty mornings remain deeply rooted in our memories.</p>
+                        <p>We founded Chaipaat to bring that authentic Assam experience to your cup. Rooted in fertile soils and inspired by sustainable practices, our teas are crafted to preserve the natural character and purity of every leaf.</p>
+                        <p>From bold, malty ginger CTC blends to delicate whole-leaf green teas, every pack carries the rich aroma, warmth, and spirit of Assam—from our home to your cup.”</p>
+                    </div>
+                    <div class="founders-img-wrap">
+                        <img src="assets/Founder.jpg" alt="Founder Diti Deka">
+                        <div class="founder-name">Founder: Diti Deka</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SHOP PAGE ================= -->
+        <section id="shop" class="page-section" style="padding-top: 100px;">
+            <div class="container section-pad">
+                <h2>Premium <span class="gold-text">Collection</span></h2>
+                <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">Browse our exquisite range of garden-fresh teas, meticulously crafted for the perfect brew.</p>
+                <div class="grid-container" id="all-products"></div>
+            </div>
+        </section>
+
+        <!-- ================= HAMPERS PAGE ================= -->
+        <section id="hampers" class="page-section" style="padding-top: 100px;">
+            <div class="container section-pad">
+                <h2>Tea <span class="gold-text">Hampers</span></h2>
+                <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">Browse our luxury gifting options, beautifully packed and perfect for any occasion.</p>
+                <div class="grid-container" id="hamper-products"></div>
+                <div class="hamper-cta-wrap">
+                    <p>Looking for something special? We can put together a hamper tailored just for you.</p>
+                    <a href="https://wa.me/918876859205?text=Hello%20Chaipaat%2C%0A%0AI%20would%20like%20to%20customise%20my%20own%20tea%20hamper.%20Please%20help%20me%20put%20one%20together." target="_blank" class="btn btn-gold">Customise Your Own Hamper</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= REVIEWS PAGE ================= -->
+        <section id="reviews" class="page-section" style="padding-top: 100px; background-color: var(--white);">
+            <div class="container section-pad">
+                <h2>Customer <span class="gold-text">Testimonials</span></h2>
+                <p style="text-align: center; margin-bottom: 4rem;">What our tea connoisseurs say about Chaipaat.</p>
+                
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars">
+                            <svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg>
+                        </div>
+                        <p class="review-text">"The Ginger CTC tea is an absolute revelation. It has the perfect strong kick of Assam tea combined with natural ginger that warms you right up."</p>
+                        <p class="reviewer-name">- Anjali S.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">
+                            <svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg>
+                        </div>
+                        <p class="review-text">"I ordered the luxury gift hamper for a corporate event. The packaging is premium and the tea quality is phenomenal. Highly recommended!"</p>
+                        <p class="reviewer-name">- Rajesh M.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">
+                            <svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg>
+                        </div>
+                        <p class="review-text">"Finally found genuine Assam Green Tea that doesn't taste bitter. It's smooth, aromatic, and genuinely feels like a healthy detox."</p>
+                        <p class="reviewer-name">- Priya D.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">
+                            <svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg>
+                        </div>
+                        <p class="review-text">"As a daily tea drinker, the Garden Fresh CTC is my staple now. The color, aroma, and the strength are precisely what authentic Assam tea should be."</p>
+                        <p class="reviewer-name">- Vikram P.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">
+                            <svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg>
+                        </div>
+                        <p class="review-text">"The Instant Premix is a lifesaver for my travels. It tastes surprisingly authentic for a premix. Great job by the Chaipaat team."</p>
+                        <p class="reviewer-name">- Neha K.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">
+                            <svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg><svg width="20" height="20"><use href="#icon-star"></use></svg>
+                        </div>
+                        <p class="review-text">"Love the Immune Booster Tea. You can actually taste the raw herbs and Tulsi. I drink it every evening. Very soothing."</p>
+                        <p class="reviewer-name">- Arun T.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT PAGE ================= -->
+        <section id="contact" class="page-section" style="padding-top: 100px;">
+            <div class="container section-pad">
+                <h2>Get in <span class="gold-text">Touch</span></h2>
+                
+                <div class="contact-cards-wrap">
+                    <div class="contact-feature">
+                        <svg width="40" height="40"><use href="#icon-map"></use></svg>
+                        <h4>Headquarters</h4>
+                        <p>Deka Organic Tea<br>Morigaon, Assam 782127</p>
+                    </div>
+                    <div class="contact-feature">
+                        <svg width="40" height="40"><use href="#icon-phone"></use></svg>
+                        <h4>Phone / WhatsApp</h4>
+                        <p>+91 8876859205<br>Owner: Diti Deka</p>
+                    </div>
+                    <div class="contact-feature">
+                        <svg width="40" height="40"><use href="#icon-mail"></use></svg>
+                        <h4>Email</h4>
+                        <p>info.chaipaat@gmail.com<br>Available 24/7</p>
+                    </div>
+                </div>
+
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114421.36294715978!2d92.25997235!3d26.25595995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744c8033230a213%3A0xe5a3c0c0587d1df1!2sMorigaon%2C%20Assam!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0; box-shadow: var(--shadow-sm); border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= POLICIES PAGE ================= -->
+        <section id="policies" class="page-section">
+            <div class="container section-pad">
+                <h2>Our <span class="gold-text">Policies</span></h2>
+                <div class="policy-container" style="background: var(--white); padding: 3rem; box-shadow: var(--shadow-sm); max-width: 800px; margin: 0 auto; border-radius: 8px;">
+                    <h4 style="color: var(--secondary); margin-top: 0;">Shipping Policy</h4>
+                    <p>Orders are dispatched within 2-3 business days. Delivery across India takes approximately 5-7 working days depending on location.</p>
+                    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #eee;">
+                    
+                    <h4 style="color: var(--secondary);">Privacy Policy</h4>
+                    <p>We value your privacy. We do not share your information with third parties. Data collected is strictly used for order fulfillment and internal communication.</p>
+                    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #eee;">
+                    
+                    <h4 style="color: var(--secondary);">Terms & Conditions</h4>
+                    <p>By using our website, you agree to our terms of service. Prices are subject to change. Due to the consumable nature of our products, returns are only accepted for damaged goods reported within 24 hours of delivery.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="overlay" id="page-overlay" onclick="closeAllModals()"></div>
+
+    <!-- ================= PRODUCT MODAL ================= -->
+    <div class="modal" id="product-modal">
+        <button class="modal-close" onclick="closeAllModals()" aria-label="Close">×</button>
+        <div class="modal-grid">
+            <div class="modal-img-container">
+                <img id="detail-img" src="" alt="Product Image">
+            </div>
+            <div class="modal-details">
+                <span id="detail-category" class="product-category">Category</span>
+                <h3 id="detail-title" class="detail-title">Title</h3>
+                <div class="product-price" id="detail-price">₹--</div>
+                
+                <p id="detail-desc" class="detail-desc">Desc</p>
+                
+                <div class="detail-meta">
+                    <strong>Net Weight:</strong> <span id="detail-weight"></span><br>
+                    <span id="detail-ingredients-row"><strong>Ingredients:</strong> <span id="detail-ingredients"></span><br></span>
+                    <span id="detail-brew-row"><strong>Brewing Guide:</strong> <span id="detail-brew"></span></span>
+                    <span id="detail-hamper-note-row" style="display:none;"><span id="detail-hamper-note"></span> For customisation and further details, please <a href="#" onclick="event.preventDefault(); closeAllModals(); enquireWhatsApp(currentViewingProduct ? currentViewingProduct.title : '');" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">enquire via WhatsApp</a>.</span>
+                </div>
+
+                <div class="action-flex">
+                    <input type="number" id="detail-qty" class="qty-input" value="1" min="1" inputmode="numeric">
+                    <button class="btn btn-gold" onclick="addCurrentToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= CART DRAWER ================= -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3 style="margin:0;">Your Cart</h3>
+            <button class="close-btn" onclick="toggleCart()">×</button>
+        </div>
+        
+        <div class="cart-body">
+            <div id="cart-items-container"></div>
+            
+            <div class="checkout-form" id="checkout-form" style="display: none;">
+                <h4 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--primary);">Delivery Details</h4>
+                <input type="text" id="cust-name" placeholder="Full Name" required>
+                <input type="text" id="cust-phone" placeholder="Phone Number" required>
+                <textarea id="cust-address" rows="3" placeholder="Full Delivery Address" required></textarea>
+            </div>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            
+            <button class="btn btn-dark" style="width: 100%; display: none;" id="btn-checkout-init" onclick="initCheckout()">Checkout Now</button>
+            <button class="btn btn-gold" style="width: 100%; display: none;" id="btn-proceed-payment" onclick="proceedToPayment()">Proceed to Payment</button>
+        </div>
+    </div>
+
+    <!-- ================= PAYMENT (SCAN & PAY) MODAL ================= -->
+    <div class="modal payment-modal" id="payment-modal">
+        <button class="modal-close" onclick="closeAllModals()" aria-label="Close">×</button>
+        
+        <div class="payment-body">
+        <div class="order-ref" id="pay-order-id" style="color: var(--primary); font-size: 1.2rem;">Order Ref: #CPXXXXXX</div>
+        <div style="font-size: 1.8rem; font-weight: bold; font-family: var(--font-body); color: var(--secondary); margin-bottom: 5px;" id="pay-amount">Amount: ₹0</div>
+        
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 0;">Scan QR with Google Pay, PhonePe, or Paytm. Or tap below to open UPI App directly.</p>
+        
+        <div class="qr-container">
+            <img id="static-qr" src="assets/Chaipaatqr.jpg" alt="UPI QR Code">
+        </div>
+        
+        <p class="upi-id" style="font-size: 1.2rem; font-weight: bold; color: var(--primary); letter-spacing: 1px; margin-bottom: 1rem;">UPI ID: 8876859205-2@ybl</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+            <a id="upi-link-btn" href="#" class="btn btn-outline" style="width: 100%; padding: 12px;">OPEN UPI APP (MOBILE)</a>
+            <button class="btn btn-gold" onclick="sendOrderWhatsApp()" style="width: 100%; padding: 12px;">I'VE PAID -&gt; SEND WHATSAPP ORDER</button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Premium Dark Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="max-width: 300px;">
+                    <div class="footer-logo-wrapper">
+                        <img src="assets/Chaipaat Logo PNG-19.jpg" alt="Logo" style="height: 60px; display: block;">
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">Authentic Tea from Assam – The Land of Rhinos 🦏. Experience 100% natural and organic luxury.</p>
+                    
+                    <div class="social-icons" style="margin-top: 1rem;">
+                        <a href="https://www.facebook.com/profile.php?id=61562082190170&sk=directory_contact_info" target="_blank" class="icon-bg-fb">
+                            <svg width="18" height="18"><use href="#icon-fb"></use></svg>
+                        </a>
+                        <a href="https://www.instagram.com/chaipaat_official/" target="_blank" class="icon-bg-ig">
+                            <svg width="18" height="18"><use href="#icon-ig"></use></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a onclick="navigateTo('home')">Home</a></li>
+                        <li><a onclick="navigateTo('about')">Our Story</a></li>
+                        <li><a onclick="navigateTo('shop')">Shop Teas</a></li>
+                        <li><a onclick="navigateTo('hampers')">Tea Hampers</a></li>
+                        <li><a onclick="navigateTo('reviews')">Customer Reviews</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a onclick="navigateTo('policies')">Privacy Policy</a></li>
+                        <li><a onclick="navigateTo('policies')">Terms & Conditions</a></li>
+                        <li><a onclick="navigateTo('policies')">Shipping & Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Request a Quote</h4>
+                    <div class="quote-form">
+                        <input type="text" id="quote-name" placeholder="Your Name" required>
+                        <textarea id="quote-msg" rows="2" placeholder="Bulk/Corporate Enquiry Details" required></textarea>
+                        <button class="btn btn-gold" onclick="submitQuoteWhatsApp()" style="padding: 10px 20px; font-size: 0.8rem; width: 100%;">Send via WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p style="margin: 0; color: #888;">&copy; 2026 Chaipaat. All rights reserved.</p>
+                <div class="dev-credit" onclick="contactDev()">Crafted with ❤ by Mahalia Design</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        const products = [
+            {
+                id: 1, type: 'regular',
+                title: "Immune Booster Tea", category: "Wellness Blend",
+                price: 399, displayPrice: "₹399", weight: "100g",
+                img: "assets/products/immune-booster-tea.jpg", bestseller: true,
+                desc: "Ayurvedic blend of Assam green tea infused with immunity-strengthening herbs. A daily wellness ritual to keep you naturally stronger.",
+                ingredients: "Green Tea, Tulsi, Ashwagandha, Giloy, Black Pepper.",
+                brew: "Heat water to 90°C. Steep for 3-5 mins. Add honey to taste."
+            },
+            {
+                id: 2, type: 'regular',
+                title: "Detox Tea / Weight Loss Tea", category: "Wellness Blend",
+                price: 399, displayPrice: "₹399", weight: "100g",
+                img: "assets/products/detox-tea.jpg", bestseller: false,
+                desc: "A finest blend of 100% natural Indian herbs with high-quality full-leaf organic green tea, formulated to boost metabolism and flush out toxins.",
+                ingredients: "Green Tea, Garcinia Cambogia, Lemongrass, Cinnamon.",
+                brew: "Steep 1 tsp in hot water for 3 mins. Consume empty stomach."
+            },
+            {
+                id: 3, type: 'regular',
+                title: "Garden Fresh Assam Black Tea (CTC)", category: "Black Tea",
+                price: 375, displayPrice: "₹375", weight: "500g",
+                img: "assets/products/garden-fresh-assam-black-tea.jpg", bestseller: true,
+                desc: "Experience the robust, full-bodied flavour of authentic Assam CTC tea. Handpicked from our garden-fresh estates for a rich, malty cup every time.",
+                ingredients: "100% Pure Assam CTC Black Tea Leaves.",
+                brew: "Boil water to 100°C. Add 1 tsp of tea per cup. Brew for 3-4 minutes. Add milk and sugar to taste."
+            },
+            {
+                id: 4, type: 'regular',
+                title: "Long Leaf Green Tea (Garden Fresh)", category: "Green Tea",
+                price: 350, displayPrice: "₹350", weight: "100g",
+                img: "assets/products/long-leaf-green-tea.jpg", bestseller: false,
+                desc: "Delicate, whole-leaf green tea packed with antioxidants. Pure, natural and refreshing with a smooth, non-bitter taste.",
+                ingredients: "100% Organic Long Leaf Green Tea.",
+                brew: "Heat water to 80°C. Steep 1 tsp for 2-3 minutes. Do not add milk."
+            },
+            {
+                id: 5, type: 'regular',
+                title: "Chaipaat Elaichi Gold (CTC)", category: "Flavored Tea",
+                price: 399, displayPrice: "₹399", weight: "500g",
+                img: "assets/products/chaipaat-elaichi-gold.jpg", bestseller: true,
+                desc: "Our signature Assam CTC infused with premium, natural cardamom (Elaichi). A fragrant, golden and refreshing blend for every cup.",
+                ingredients: "Assam CTC Tea, Crushed Natural Cardamom.",
+                brew: "Boil water, add 1 tsp tea, brew for 3-4 mins, add milk/sugar."
+            },
+            {
+                id: 6, type: 'regular',
+                title: "Chaipaat Signature Ginger (CTC)", category: "Flavored Tea",
+                price: 399, displayPrice: "₹399", weight: "500g",
+                img: "assets/products/chaipaat-signature-ginger.jpg", bestseller: false,
+                desc: "Strong Assam CTC tea blended with real, dried ginger pieces to boost immunity, warm the body and soothe the throat.",
+                ingredients: "Assam CTC Tea, Natural Dried Ginger.",
+                brew: "Boil water, add 1 tsp tea, brew for 4 mins, add milk/jaggery."
+            },
+            {
+                id: 7, type: 'regular',
+                title: "Herbal Tulsi Tea", category: "Herbal Infusion",
+                price: 425, displayPrice: "₹425", weight: "500g",
+                img: "assets/products/herbal-tulsi-tea.jpg", bestseller: false,
+                desc: "A soothing herbal infusion of Assam tea and pure Tulsi leaves, known for its calming, immunity-boosting properties.",
+                ingredients: "Assam Tea, Tulsi (Holy Basil).",
+                brew: "Heat water to 90°C. Steep 1 tsp for 4-5 minutes. Best enjoyed without milk."
+            },
+            {
+                id: 8, type: 'regular',
+                title: "Orthodox Tea (Black Tea)", category: "Black Tea",
+                price: 650, displayPrice: "₹650", weight: "500g",
+                img: "assets/products/orthodox-tea.jpg", bestseller: false,
+                desc: "Traditionally rolled whole-leaf orthodox tea from garden-fresh Assam gardens, prized for its bright liquor and refined, malty character.",
+                ingredients: "100% Orthodox Assam Black Tea Leaves.",
+                brew: "Boil water to 100°C. Steep 1 tsp for 3-4 minutes. Enjoy with or without milk."
+            },
+            {
+                id: 9, type: 'regular',
+                title: "White Pride (White Tea)", category: "Luxury Tea",
+                price: 999, displayPrice: "₹999", weight: "100g",
+                img: "assets/products/white-pride.jpg", bestseller: false,
+                desc: "A rare, luxury premium white tea — pure, minimally processed and rich in antioxidants. A delicate flavour straight from Assam's gardens.",
+                ingredients: "100% Pure Assam White Tea Leaves.",
+                brew: "Heat water to 75°C. Steep 2-3 minutes. Enjoy pure, without milk or sugar."
+            },
+            {
+                id: 10, type: 'regular',
+                title: "Kadak Masala Chai", category: "Flavored Tea",
+                price: 399, displayPrice: "₹399", weight: "500g",
+                img: "assets/products/kadak-masala-chai.jpg", bestseller: false,
+                desc: "A bold, authentic home-style masala chai blend crafted with premium Assam tea and warming spices for that perfect kadak cup.",
+                ingredients: "Assam CTC Tea, Cardamom, Ginger, Cinnamon, Cloves, Black Pepper.",
+                brew: "Boil water and milk together, add 1-2 tsp tea, simmer for 4-5 mins, strain and serve hot."
+            },
+            {
+                id: 11, type: 'regular',
+                title: "Chaipaat Premix Tea | Instant Tea", category: "Instant",
+                price: 350, displayPrice: "₹350", weight: "200g",
+                img: "assets/products/chaipaat-premix-tea.jpg", bestseller: false,
+                desc: "A perfectly balanced instant premix of tea extract, milk powder, and sugar. Ready in a minute — just add hot water for a comforting cup anywhere.",
+                ingredients: "Tea Extract, Dairy Whitener, Sugar.",
+                brew: "Add 1-2 tbsp to a cup of hot water. Stir well and enjoy."
+            },
+            {
+                id: 12, type: 'hamper',
+                title: "Hamper with Care", category: "Gifting",
+                price: 999, displayPrice: "₹999", weight: "Custom",
+                img: "assets/hampers/hamper-with-care.jpg", bestseller: false,
+                desc: "A set of thoughtfully packed jute tote bags, tied with love — a warm and simple way to gift Chaipaat tea to someone special.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 13, type: 'hamper',
+                title: "Tea with Jute Pouch", category: "Gifting",
+                price: 699, displayPrice: "₹699", weight: "Custom",
+                img: "assets/hampers/tea-with-jute-pouch.jpg", bestseller: false,
+                desc: "Our garden-fresh tea presented in rustic, eco-friendly jute pouches — simple, sustainable and full of charm.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 14, type: 'hamper',
+                title: "Personalised Gift Hamper", category: "Gifting",
+                price: 1999, displayPrice: "₹1999", weight: "Custom",
+                img: "assets/hampers/personalised-gift-hamper.jpg", bestseller: true,
+                desc: "A beautifully curated basket that can be personalised to the occasion — combining our finest teas with thoughtful add-ons.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 15, type: 'hamper',
+                title: "Bamboo Buckets Tea with Love", category: "Gifting",
+                price: 2500, displayPrice: "₹2500", weight: "Custom",
+                img: "assets/hampers/bamboo-buckets-tea-with-love.jpg", bestseller: false,
+                desc: "Elegant handwoven bamboo baskets filled with our signature teas — a natural, earthy gifting experience made with love.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 16, type: 'hamper',
+                title: "Boutique Box", category: "Gifting",
+                price: 1500, displayPrice: "₹1500", weight: "Custom",
+                img: "assets/hampers/boutique-box.jpg", bestseller: false,
+                desc: "A chic boutique-style gift box with a delicate handle, packed with premium teas and treats for a truly special unboxing moment.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 17, type: 'hamper',
+                title: "Tea Candles (Set of 2)", category: "Gifting",
+                price: 699, displayPrice: "₹699", weight: "Custom",
+                img: "assets/hampers/tea-candles-set-of-2.jpg", bestseller: false,
+                desc: "Hand-poured soy wax candles with a long-lasting chai aroma, paired with our tea — a cosy, fragrant gifting duo.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 18, type: 'hamper',
+                title: "Especially For You", category: "Gifting",
+                price: 1200, displayPrice: "₹1200", weight: "Custom",
+                img: "assets/hampers/especially-for-you.jpg", bestseller: false,
+                desc: "A charming organza-wrapped gift set designed to feel personal — perfect for saying thank you or simply thinking of someone.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 19, type: 'hamper',
+                title: "Tea with Luxury Touch", category: "Gifting",
+                price: 1899, displayPrice: "₹1899", weight: "Custom",
+                img: "assets/hampers/tea-with-luxury-touch.jpg", bestseller: false,
+                desc: "An elegant velvet gift box finished with a floral corsage, offering a premium, refined way to gift Chaipaat tea.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 20, type: 'hamper',
+                title: "Silver Plating Tea Trunk", category: "Gifting",
+                price: 2999, displayPrice: "₹2999", weight: "Custom",
+                img: "assets/hampers/silver-plating-tea-trunk.jpg", bestseller: true,
+                desc: "A regal, silver-plated engraved trunk box — our most opulent hamper, crafted for premium corporate and festive gifting.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 21, type: 'hamper',
+                title: "Playful Colours (Customised Colour Boxes)", category: "Gifting",
+                price: 999, displayPrice: "₹999", weight: "Custom",
+                img: "assets/hampers/playful-colours.jpg", bestseller: false,
+                desc: "Fun, vibrant stacked gift boxes available in customisable colours — a playful way to present our teas for any celebration.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 22, type: 'hamper',
+                title: "Wooden Love", category: "Gifting",
+                price: 1899, displayPrice: "₹1899", weight: "Custom",
+                img: "assets/hampers/wooden-love.jpg", bestseller: false,
+                desc: "A handcrafted wooden tea box, engraved and built to last — a keepsake gift that celebrates the ritual of tea.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 23, type: 'hamper',
+                title: "Customised DIY", category: "Gifting",
+                price: 999, displayPrice: "₹999", weight: "Custom",
+                img: "assets/hampers/customised-diy.jpg", bestseller: false,
+                desc: "A build-your-own gift hamper, wrapped and ready for your personal touches — perfect for a hands-on, heartfelt gift.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 24, type: 'hamper',
+                title: "Festival Vibe", category: "Gifting",
+                price: 1200, displayPrice: "₹1200", weight: "Custom",
+                img: "assets/hampers/festival-vibe.jpg", bestseller: false,
+                desc: "A festive gift box wrapped in celebratory ribbon, designed to bring warmth and cheer to any festival gifting occasion.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            },
+            {
+                id: 25, type: 'hamper',
+                title: "Customised Tea Gift Hamper", category: "Gifting",
+                price: 1599, displayPrice: "₹1599", weight: "Custom",
+                img: "assets/hampers/customised-tea-gift-hamper.jpg", bestseller: false,
+                desc: "A generously curated basket hamper that can be tailored to your preferences — a wholesome, wellness-forward gifting choice.",
+                includesNote: "Comes with a curated selection of Chaipaat teas."
+            }
+        ];
+
+        let cart = [];
+        let currentViewingProduct = null;
+        let pendingOrderData = null;
+
+        function createProductCard(p) {
+            const badgeHtml = p.bestseller ? `<div class="bestseller-badge">Bestseller</div>` : '';
+            return `
+                <div class="product-card">
+                    <div class="product-img-wrap" onclick="openProductModal(${p.id})">
+                        ${badgeHtml}
+                        <img src="${p.img}" alt="${p.title}" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <span class="product-category">${p.category}</span>
+                            <h3 class="product-title">${p.title}</h3>
+                            <div class="product-price">${p.displayPrice}</div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-enquire" onclick="enquireWhatsApp('${p.title}')">Enquire</button>
+                            <button class="btn-cart" onclick="addToCart(${p.id}, 1)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const allProducts = document.getElementById('all-products');
+            const featuredProducts = document.getElementById('featured-products');
+            const hamperProducts = document.getElementById('hamper-products');
+            
+            products.forEach(p => {
+                const card = createProductCard(p);
+                if (p.type === 'hamper') {
+                    hamperProducts.innerHTML += card;
+                } else {
+                    allProducts.innerHTML += card;
+                    if(p.bestseller) featuredProducts.innerHTML += card; 
+                }
+            });
+            updateCartUI();
+        });
+
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobile-nav');
+            if(nav.classList.contains('open')) {
+                nav.classList.remove('open');
+            } else {
+                nav.classList.add('open');
+            }
+        }
+
+        function navigateTo(sectionId) {
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(link => link.classList.remove('active'));
+            
+            document.getElementById(sectionId).classList.add('active');
+            
+            const activeLinks = document.querySelectorAll(`.nav-item[data-target="${sectionId}"]`);
+            activeLinks.forEach(link => link.classList.add('active'));
+            
+            document.getElementById('mobile-nav').classList.remove('open');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openProductModal(id) {
+            const p = products.find(x => x.id === id);
+            if(!p) return;
+            currentViewingProduct = p;
+            
+            document.getElementById('detail-img').src = p.img;
+            document.getElementById('detail-category').innerText = p.category;
+            document.getElementById('detail-title').innerText = p.title;
+            document.getElementById('detail-price').innerText = p.displayPrice;
+            document.getElementById('detail-desc').innerText = p.desc;
+            document.getElementById('detail-weight').innerText = p.weight;
+
+            const ingredientsRow = document.getElementById('detail-ingredients-row');
+            const brewRow = document.getElementById('detail-brew-row');
+            const hamperNoteRow = document.getElementById('detail-hamper-note-row');
+
+            if (p.type === 'hamper') {
+                ingredientsRow.style.display = 'none';
+                brewRow.style.display = 'none';
+                hamperNoteRow.style.display = 'inline';
+                document.getElementById('detail-hamper-note').innerText = p.includesNote || "Comes with a curated selection of Chaipaat teas.";
+            } else {
+                ingredientsRow.style.display = 'inline';
+                brewRow.style.display = 'inline';
+                hamperNoteRow.style.display = 'none';
+                document.getElementById('detail-ingredients').innerText = p.ingredients;
+                document.getElementById('detail-brew').innerText = p.brew;
+            }
+
+            document.getElementById('detail-qty').value = 1;
+            
+            document.getElementById('page-overlay').classList.add('active');
+            const modal = document.getElementById('product-modal');
+            modal.classList.add('active');
+            // Always start the modal scrolled to the top so the image/title are in view
+            const grid = modal.querySelector('.modal-grid');
+            if (grid) grid.scrollTop = 0;
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeAllModals() {
+            document.getElementById('page-overlay').classList.remove('active');
+            document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
+            document.getElementById('cart-drawer').classList.remove('open');
+            document.body.classList.remove('no-scroll');
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('page-overlay');
+            if(drawer.classList.contains('open')) {
+                drawer.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            } else {
+                closeAllModals();
+                drawer.classList.add('open');
+                overlay.classList.add('active');
+                document.body.classList.add('no-scroll');
+            }
+        }
+
+        // Escape key closes any open modal or the cart drawer
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAllModals();
+        });
+
+        function addCurrentToCart() {
+            const qty = parseInt(document.getElementById('detail-qty').value);
+            if(currentViewingProduct && qty > 0) {
+                addToCart(currentViewingProduct.id, qty);
+                closeAllModals();
+                toggleCart();
+            }
+        }
+
+        function addToCart(id, qty) {
+            const p = products.find(x => x.id === id);
+            const existing = cart.find(x => x.id === id);
+            if(existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({ ...p, qty: qty });
+            }
+            updateCartUI();
+        }
+
+        function updateItemQty(id, delta) {
+            const item = cart.find(x => x.id === id);
+            if(item) {
+                item.qty += delta;
+                if(item.qty <= 0) {
+                    cart = cart.filter(x => x.id !== id);
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const countBadge = document.getElementById('cart-count');
+            const totalEl = document.getElementById('cart-total-amount');
+            const checkoutBtn = document.getElementById('btn-checkout-init');
+            const proceedBtn = document.getElementById('btn-proceed-payment');
+            const checkoutForm = document.getElementById('checkout-form');
+            
+            container.innerHTML = "";
+            let total = 0;
+            let count = 0;
+
+            if(cart.length === 0) {
+                container.innerHTML = "<p style='text-align:center; color:#888; margin-top: 2rem;'>Your cart is empty.</p>";
+                checkoutBtn.style.display = "none";
+                proceedBtn.style.display = "none";
+                checkoutForm.style.display = "none";
+            } else {
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.qty;
+                    total += itemTotal;
+                    count += item.qty;
+                    
+                    container.innerHTML += `
+                        <div class="cart-item">
+                            <img src="${item.img}" alt="${item.title}">
+                            <div class="cart-item-details">
+                                <div class="cart-item-title">${item.title}</div>
+                                <div style="color: var(--primary); font-weight: 600; font-family: var(--font-body);">₹${item.price}</div>
+                                <div class="cart-qty-ctrl">
+                                    <button class="qty-btn" onclick="updateItemQty(${item.id}, -1)">-</button>
+                                    <span style="font-family: var(--font-body);">${item.qty}</span>
+                                    <button class="qty-btn" onclick="updateItemQty(${item.id}, 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                if (checkoutForm.style.display === "block") {
+                    checkoutBtn.style.display = "none";
+                    proceedBtn.style.display = "block";
+                } else {
+                    checkoutBtn.style.display = "block";
+                    proceedBtn.style.display = "none";
+                }
+            }
+            
+            countBadge.innerText = count;
+            totalEl.innerText = `₹${total}`;
+        }
+
+        function initCheckout() {
+            document.getElementById('btn-checkout-init').style.display = "none";
+            document.getElementById('checkout-form').style.display = "block";
+            document.getElementById('btn-proceed-payment').style.display = "block";
+            
+            setTimeout(() => {
+                const cartBody = document.querySelector('.cart-body');
+                cartBody.scrollTop = cartBody.scrollHeight;
+            }, 50);
+        }
+
+        function generateOrderID() {
+            return 'CP' + Math.floor(100000 + Math.random() * 900000);
+        }
+
+        function proceedToPayment() {
+            const name = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const address = document.getElementById('cust-address').value.trim();
+            
+            if(!name || !phone || !address) {
+                alert("Please fill in all delivery details.");
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const orderId = generateOrderID();
+            
+            pendingOrderData = { name, phone, address, total, orderId, items: [...cart] };
+            
+            const upiId = "8876859205-2@ybl";
+            const upiUrl = `upi://pay?pa=${upiId}&pn=Chaipaat%20Tea&tr=${orderId}&am=${total}&cu=INR`;
+            document.getElementById('upi-link-btn').href = upiUrl;
+            
+            document.getElementById('pay-order-id').innerText = `Order Ref: #${orderId}`;
+            document.getElementById('pay-amount').innerText = `Amount: ₹${total}`;
+            
+            document.getElementById('cart-drawer').classList.remove('open');
+            document.getElementById('payment-modal').classList.add('active');
+            document.body.classList.add('no-scroll');
+        }
+
+        function sendOrderWhatsApp() {
+            if(!pendingOrderData) return;
+            const o = pendingOrderData;
+            
+            let msg = `*New Order: ${o.orderId}*\n\n`; 
+            msg += `*Name:* ${o.name}\n`;
+            msg += `*Phone:* ${o.phone}\n`;
+            msg += `*Address:* ${o.address}\n\n`;
+            msg += `*Order Items:*\n`;
+            
+            o.items.forEach((item, idx) => {
+                msg += `${idx+1}. ${item.title} x ${item.qty} (₹${item.price * item.qty})\n`;
+            });
+            
+            msg += `\n*Grand Total:* ₹${o.total}\n`;
+            msg += `\n*Status:* Customer has scanned the QR to pay (8876859205-2@ybl). Please check screenshot & confirm order.`;
+            
+            window.open(`https://wa.me/918876859205?text=${encodeURIComponent(msg)}`, '_blank');
+            
+            cart = [];
+            updateCartUI();
+            document.getElementById('checkout-form').style.display = "none";
+            closeAllModals();
+        }
+
+        function submitQuoteWhatsApp() {
+            const name = document.getElementById('quote-name').value.trim();
+            const enquiry = document.getElementById('quote-msg').value.trim();
+            
+            if(!name || !enquiry) {
+                alert("Please fill in your name and message.");
+                return;
+            }
+            
+            const msg = `Hello Chaipaat,\n\n*Bulk/Corporate Enquiry*\n*Name:* ${name}\n*Message:* ${enquiry}`;
+            window.open(`https://wa.me/918876859205?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function enquireWhatsApp(productTitle) {
+            const msg = `Hello Chaipaat,\n\nI would like to enquire about: *${productTitle}*.\nPlease provide more details.`;
+            window.open(`https://wa.me/918876859205?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+        
+        let selectedDietPref = "";
+
+        function selectDietPref(pref) {
+            selectedDietPref = pref;
+            document.querySelectorAll('.diet-pref-btn').forEach(btn => {
+                btn.classList.toggle('selected', btn.dataset.pref === pref);
+            });
+        }
+
+        function submitDietConsultation() {
+            const name = document.getElementById('diet-name').value.trim();
+            const age = document.getElementById('diet-age').value;
+            const gender = document.getElementById('diet-gender').value;
+            const weight = document.getElementById('diet-weight').value.trim();
+            const height = document.getElementById('diet-height').value.trim();
+            
+            if (!name || !age || !gender || !weight || !height || !selectedDietPref) {
+                alert("Please complete the form (Name, Age, Gender, Body Weight, Height, Diet Preference) before proceeding.");
+                return;
+            }
+            
+            const msg = `Name: ${name}\nAge Group: ${age}\nGender: ${gender}\nBody Weight: ${weight}\nHeight: ${height}\nDiet Preference: ${selectedDietPref}\nI would like to receive a free diet consultation and personalised diet routine.`;
+            window.open(`https://wa.me/918876859205?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function contactDev() {
+            const msg = `Hello Mahalia Design,\n\nI visited the Chaipaat website.\nI would like to discuss a premium website project.`;
+            window.open(`https://wa.me/918310984224?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
